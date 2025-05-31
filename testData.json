@@ -1,0 +1,10 @@
+{
+  "todos": [
+    "Buy fruits",
+    "Water the plants",
+    "Clean the room"
+    ],
+  "editedTodo":[ 
+    "Water the plants"
+    ]
+}
