@@ -89,7 +89,7 @@ test('Filter - All', async ({page}) => {
     // Making a click on the filter "All" icon
     await page.locator(':text-is("All")').click()
 
-   // Verifying if the filter "All" icon is selected and the Todo appears on the list
+    // Verifying if the filter "All" icon is selected and the Todo appears on the list
     await expect(page.locator(':text-is("All")')).toHaveClass(/selected/)
     await expect(page.locator('[data-testid="todo-title"]')).toHaveText('Buy fruits')
 })
@@ -105,7 +105,6 @@ test('Filter - Active', async ({page}) => {
     // Making a click on the filter "Active" icon
     await page.locator(':text-is("Active")').click()
 
-    
     // Verifying if the filter "Active" icon is clicked and the active Todo appears on the list
     await expect(page.locator(':text-is("Active")')).toHaveClass(/selected/)
     await expect(page.locator('[data-testid="todo-title"]')).toHaveText('Buy fruits')
@@ -125,7 +124,6 @@ test('Filter - Completed', async ({page}) => {
     // Making a click on the filter "Completed" icon
     await page.locator(':text-is("Completed")').click()
 
- 
     // Verifying if the filter "Completed" icon is clicked and the completed Todo appears on the list
     await expect(page.locator(':text-is("Completed")')).toHaveClass(/selected/)
     await expect(page.locator('[data-testid="todo-title"]')).toHaveCount(1)
@@ -141,9 +139,6 @@ test('Adding an empty task', async({page}) => {
     await page.locator('//input[@class="new-todo"]').fill('')
     await page.locator('//input[@class="new-todo"]').press('Enter')
         
-    // This is to be printed if the task is successful
-    console.log('Success!')
-    
     // Verifying no todo is added
     await expect(page.locator('[data-testid="todo-title"]')).toHaveCount(0)
 })
@@ -159,7 +154,6 @@ try{
     await page.locator('//input[@class="new-todo"]').fill('Clean the room');
     await page.locator('//input[@class="new-todo"]').press('Enter');
 
-   
     // Intentionally failing the assertion
     await expect(page.locator('[data-testid="todo-title"]')).toHaveText('Water the plants')
 }   
